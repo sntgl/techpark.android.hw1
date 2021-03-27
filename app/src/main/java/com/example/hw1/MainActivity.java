@@ -9,23 +9,22 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     private static final String RECOVER_KEY = "items_count_recover";
-    private FullFragment fullFragment;
-    private ListFragment listFragment;
+    private Fragment activeFragment;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            listFragment = new ListFragment();
+            activeFragment = new ListFragment();
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.fragment_place, listFragment, ListFragment.TAG)
+                    .add(R.id.fragment_place, activeFragment, ListFragment.TAG)
                     .commit();
         }
         else {
             ItemsModelCreator.recover(savedInstanceState.getInt(RECOVER_KEY));
-            listFragment = (ListFragment) loadFragmentIfExists(ListFragment.TAG);
+            activeFragment = loadFragmentIfExists(ListFragment.TAG);
         }
         setListCallback();
     }
@@ -41,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setListCallback(){
-        listFragment.setCallback(new ItemsModel.Callback(){
+        ((ListFragment) activeFragment).setCallback(new ItemsModel.Callback(){
             @Override
             public void call(ItemsModel model) {
-                fullFragment = (FullFragment) loadFragmentIfExists(FullFragment.TAG);
-                fullFragment.setModel(model);
+                activeFragment = loadFragmentIfExists(FullFragment.TAG);
+                ((FullFragment)activeFragment).setModel(model);
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_place, fullFragment, FullFragment.TAG)
+                        .replace(R.id.fragment_place, activeFragment, FullFragment.TAG)
                         .addToBackStack(null)
                         .commit();
             }
