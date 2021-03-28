@@ -36,7 +36,7 @@ public class FullFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_full, container, false);
         TextView text = view.findViewById(R.id.full_text);
         text.setText("" + (model.number));
-        text.setTextColor(ContextCompat.getColor(text.getContext(), model.color));
+        text.setTextColor(ContextCompat.getColor(text.getContext(), ItemsModelCreator.get_color(model.number)));
         return view;
     }
 

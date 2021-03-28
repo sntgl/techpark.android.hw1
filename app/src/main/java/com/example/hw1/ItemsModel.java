@@ -3,12 +3,10 @@ package com.example.hw1;
 import java.io.Serializable;
 
 public class ItemsModel implements Serializable {
-    int number;
-    int color;
+    public final int number;
 
-    public ItemsModel(int in_number, int in_color) {
+    public ItemsModel(int in_number) {
         number = in_number;
-        color = in_color;
     }
 
     public interface Callback{

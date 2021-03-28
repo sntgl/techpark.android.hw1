@@ -1,20 +1,20 @@
-com/example/hw1/BuildConfig.java
- com.example.hw1.BuildConfig
-com/example/hw1/ListFragment.java
- com.example.hw1.ListFragment
- com.example.hw1.ListFragment$1
+com/example/hw1/ItemsAdapter.java
+ com.example.hw1.ItemsAdapter
+com/example/hw1/ItemsModelCreator.java
+ com.example.hw1.ItemsModelCreator
 com/example/hw1/ItemsModel.java
  com.example.hw1.ItemsModel
  com.example.hw1.ItemsModel$Callback
 com/example/hw1/ItemsViewHolder.java
  com.example.hw1.ItemsViewHolder
  com.example.hw1.ItemsViewHolder$1
-com/example/hw1/ItemsAdapter.java
- com.example.hw1.ItemsAdapter
-com/example/hw1/ItemsModelCreator.java
- com.example.hw1.ItemsModelCreator
 com/example/hw1/MainActivity.java
  com.example.hw1.MainActivity
  com.example.hw1.MainActivity$1
 com/example/hw1/FullFragment.java
  com.example.hw1.FullFragment
+com/example/hw1/ListFragment.java
+ com.example.hw1.ListFragment
+ com.example.hw1.ListFragment$1
+com/example/hw1/BuildConfig.java
+ com.example.hw1.BuildConfig

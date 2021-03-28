@@ -20,7 +20,7 @@ class ItemsViewHolder extends RecyclerView.ViewHolder {
         FrameLayout item = itemView.findViewById(R.id.item);
 
         text.setText(String.valueOf(model.number));
-        text.setTextColor(ContextCompat.getColor(item.getContext(), model.color));
+        text.setTextColor(ContextCompat.getColor(item.getContext(), ItemsModelCreator.get_color(model.number)));
 
         item.setOnClickListener(new View.OnClickListener() {
             @Override
